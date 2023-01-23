@@ -41,14 +41,18 @@ main{
     background: white;
     background-image: url("imagenes/Muñeco.png");
     background-repeat: no-repeat;
+    background-position: center;
     border: none;
     border-radius: 24px;
     color: #0A3871;
     margin-left: 400px;
-    margin-top: 20px;
     padding-left: 20px;
-    position: fixed;
     resize: none;
+    width: 400px;
+    height: 750px;
+    text-align: center;
+    padding-top: 50px;
+    box-sizing: border-box;
 }
 
 .mensaje:focus{
@@ -68,6 +72,7 @@ main{
     cursor: pointer;
     height: 67px;
     width: 300px;
+    font-size: 25px;
 }
 
 .btn-desencriptar{
@@ -79,4 +84,5 @@ main{
     height: 67px;
     margin-left: 30px;
     width: 300px;
+    font-size: 25px;
 }
