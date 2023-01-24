@@ -19,6 +19,10 @@ main{
     width: 95%;
 }
 
+.section-1{
+    margin-left: 185px;
+}
+
 .text-area{
     border: none;
     color: #0A3871;
@@ -36,24 +40,31 @@ main{
     color: #495057;
     font-size: 16px;
 }
-
-.mensaje{
-    background: white;
-    background-image: url("imagenes/Muñeco.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    border: none;
-    border-radius: 24px;
-    color: #0A3871;
-    margin-left: 400px;
-    padding-left: 20px;
-    resize: none;
-    width: 400px;
-    height: 750px;
+ .muñeco{
     text-align: center;
-    padding-top: 50px;
+    background: white;
+    width: 450px;
+    height: 810px;
+    padding: 30px;
     box-sizing: border-box;
-}
+    border-radius: 24px;
+    margin-left: 400px;;
+    box-shadow: 1px 1px 15px 3px #CCCCCC;
+ }
+
+ .muñeco h2{
+    background: white;
+    font-weight: bold;
+    font-size: 24px;
+    padding-top: 24px;
+
+ }
+ 
+ .muñeco p{
+    background: white;
+    font-size: 18px;
+    line-height: 19px ;
+ }
 
 .mensaje:focus{
     outline: none;

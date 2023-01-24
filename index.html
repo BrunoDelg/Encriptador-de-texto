@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <title>Encriptador</title>
-        <!--<link rel="stylesheet" href="reset.css">-->
+        <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,7 @@
             <img src="imagenes/Logo.png" alt="Logo de alura" class="logo">
         </header>
         <main>
-            <section>
+            <section class="section-1">
                 <textarea class="text-area" cols="30" rows="10" placeholder="Ingrese el texto aqui"></textarea>
                 <div>
                     <h6 class="informacion">Solo letras minúsculas y sin acentos</h6>
@@ -27,9 +27,25 @@
             </section>
             <section>
                 <div class="muñeco">
-                    <textarea readonly cols="30" rows="10" class="mensaje">Ingresa el texto que deseas encriptar o desencriptar</textarea>
+                    <img src="imagenes/Muñeco.jpg" alt="muñeco">
+                    <h2>Ningún mensaje fue encontrado</h2>
+                    <p>ingresa el texto que desees encriptar o desencriptar.</p>
                 </div>
             </section>
         </main>
     </body>
 </html>
+
+<script>
+
+    var textarea = document.querySelector(".text-area");
+
+    function encriptar(){
+        alert(textarea);
+    }
+
+    var button = document.querySelector(".btn-encriptar");
+    button.onclick = encriptar;
+
+
+</script>
