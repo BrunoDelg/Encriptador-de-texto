@@ -16,7 +16,7 @@
         </header>
         <main>
             <section class="section-1">
-                <textarea class="text-area" cols="30" rows="10" placeholder="Ingrese el texto aqui"></textarea>
+                <textarea id="textarea" class="text-area" cols="30" rows="10" placeholder="Ingrese el texto aqui"></textarea>
                 <div>
                     <h6 class="informacion">Solo letras minúsculas y sin acentos</h6>
                 </div>
@@ -27,9 +27,13 @@
             </section>
             <section>
                 <div class="muñeco">
-                    <img src="imagenes/Muñeco.jpg" alt="muñeco">
-                    <h2>Ningún mensaje fue encontrado</h2>
-                    <p>ingresa el texto que desees encriptar o desencriptar.</p>
+                    <div id="texto1"></div>
+                    <div id="cajaremove">
+                        <img src="imagenes/Muñeco.jpg" alt="muñeco">
+                        <h2>Ningún mensaje fue encontrado</h2>
+                        <p>ingresa el texto que desees encriptar o desencriptar.</p>
+                    </div>
+                    
                 </div>
             </section>
         </main>
@@ -37,15 +41,44 @@
 </html>
 
 <script>
+    var textarea = "";
+    var result = "";
+    var cajaremove = "";
 
-    var textarea = document.querySelector(".text-area");
+    function escribir(){
+        document.getElementById("texto1").innerHTML = result;
+    }
+    function clear(){
+        cajaremove = document.getElementById("cajaremove");
+        cajaremove.remove();
 
+    }
     function encriptar(){
-        alert(textarea);
+
+        textarea = document.getElementById("textarea").value;
+
+        result = textarea.replaceAll("e","enter").replaceAll("a","ai").replaceAll("i","imes").replaceAll("o","ober").replaceAll("u","ufat");
+        console.log(result);
+
+        escribir();
+        clear();
     }
 
     var button = document.querySelector(".btn-encriptar");
     button.onclick = encriptar;
+
+    function desencriptar(){
+        textarea = document.getElementById("textarea").value;
+
+        result = textarea.replaceAll("imes","i").replaceAll("ober","o").replaceAll("enter","e").replaceAll("ai","a").replaceAll("ufat","u");
+        console.log(result);
+
+        escribir();
+        clear();
+    }
+
+    var button = document.querySelector(".btn-desencriptar");
+    button.onclick = desencriptar;
 
 
 </script>
