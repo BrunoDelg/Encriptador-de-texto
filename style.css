@@ -29,8 +29,12 @@ main{
     margin-top: 80px;
     text-transform: lowercase;
     resize: none;
+   
 }
-::placeholder{ color: #0A3871;}
+
+::placeholder{ 
+    color: #0A3871;
+}
 
 .text-area:focus{
     outline: none;
@@ -49,7 +53,7 @@ main{
     box-sizing: border-box;
     border-radius: 24px;
     margin-left: 400px;;
-    box-shadow: 1px 1px 15px 3px #CCCCCC;
+    box-shadow: 1px 1px 15px 3px #cab0ff;
  }
 
  .muñeco h2{
@@ -76,7 +80,7 @@ main{
 }
 
 .btn-encriptar{
-    background-color: #0A3871;
+    background-color: #a26ad3;
     border: 1px solid #0A3871;
     border-radius: 24px;
     color: white;
@@ -96,4 +100,19 @@ main{
     margin-left: 30px;
     width: 300px;
     font-size: 25px;
+}
+
+.copiar{
+    background: #eee1f8;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    color: #0A3871;
+    cursor: pointer;
+    height: 60px;
+    width: 300px;
+    font-size: 25px;
+    margin-top: 200px;
+    position: absolute;
+    right: 162px;
+    top: 550px;
 }

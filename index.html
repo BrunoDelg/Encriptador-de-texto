@@ -16,7 +16,7 @@
         </header>
         <main>
             <section class="section-1">
-                <textarea id="textarea" class="text-area" cols="30" rows="10" placeholder="Ingrese el texto aqui"></textarea>
+                <textarea id="textarea" class="text-area" cols="40" rows="12" placeholder="Ingrese el texto aqui"></textarea>
                 <div>
                     <h6 class="informacion">Solo letras minúsculas y sin acentos</h6>
                 </div>
@@ -27,12 +27,13 @@
             </section>
             <section>
                 <div class="muñeco">
-                    <div id="texto1"></div>
+                    <div id="texto1" class="texto1"></div>
                     <div id="cajaremove">
                         <img src="imagenes/Muñeco.jpg" alt="muñeco">
                         <h2>Ningún mensaje fue encontrado</h2>
                         <p>ingresa el texto que desees encriptar o desencriptar.</p>
                     </div>
+                    <button id="copiar" class="copiar">Copiar</button>
                     
                 </div>
             </section>
@@ -41,9 +42,21 @@
 </html>
 
 <script>
+
+    //set-ready//
     var textarea = "";
     var result = "";
     var cajaremove = "";
+
+    function ocultar(){
+    document.getElementById("copiar").style.display = "none";
+    }
+
+    ocultar();
+
+    function mostrar(){
+        document.getElementById("copiar").style.display = "block"
+    }
 
     function escribir(){
         document.getElementById("texto1").innerHTML = result;
@@ -53,6 +66,8 @@
         cajaremove.remove();
 
     }
+
+    //encriptar// 
     function encriptar(){
 
         textarea = document.getElementById("textarea").value;
@@ -62,10 +77,13 @@
 
         escribir();
         clear();
+        mostrar();
     }
 
     var button = document.querySelector(".btn-encriptar");
     button.onclick = encriptar;
+
+    //desencriptar//
 
     function desencriptar(){
         textarea = document.getElementById("textarea").value;
@@ -75,10 +93,32 @@
 
         escribir();
         clear();
+        mostrar();
     }
 
-    var button = document.querySelector(".btn-desencriptar");
-    button.onclick = desencriptar;
+    var button2 = document.querySelector(".btn-desencriptar");
+    button2.onclick = desencriptar;
+
+    //copiar//
+
+    function copyText(){
+        navigator.permissions.query({name: "clipboard-write"}).then((result) => {
+        if (result.state === "granted" || result.state === "prompt") {
+            let copy = document.getElementById("texto1");
+            navigator.clipboard.writeText(copy.value);
+            alert("texto copiado");        }
+        });
+
+       
+
+        
+    }
+
+    
+    var button3 = document.querySelector(".copiar");
+    button3.onclick = copyText;
+
+
 
 
 </script>
