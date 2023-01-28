@@ -18,7 +18,7 @@
             <section class="section-1">
                 <textarea id="textarea" class="text-area" cols="40" rows="12" placeholder="Ingrese el texto aqui"></textarea>
                 <div>
-                    <h6 class="informacion">Solo letras minúsculas y sin acentos</h6>
+                    <h6 class="informacion">&#9888 Solo letras minúsculas y sin acentos</h6>
                 </div>
                 <div class="botones">
                     <button class="btn-encriptar">Encriptar</button>
@@ -71,13 +71,14 @@
     function encriptar(){
 
         textarea = document.getElementById("textarea").value;
-
+       
         result = textarea.replaceAll("e","enter").replaceAll("a","ai").replaceAll("i","imes").replaceAll("o","ober").replaceAll("u","ufat");
         console.log(result);
 
         escribir();
         clear();
         mostrar();
+    
     }
 
     var button = document.querySelector(".btn-encriptar");
@@ -102,18 +103,10 @@
     //copiar//
 
     function copyText(){
-        navigator.permissions.query({name: "clipboard-write"}).then((result) => {
-        if (result.state === "granted" || result.state === "prompt") {
-            let copy = document.getElementById("texto1");
-            navigator.clipboard.writeText(copy.value);
-            alert("texto copiado");        }
-        });
-
-       
-
-        
+        let copy = result;
+        navigator.clipboard.writeText(result);
+        alert("texto copiado");        
     }
-
     
     var button3 = document.querySelector(".copiar");
     button3.onclick = copyText;
